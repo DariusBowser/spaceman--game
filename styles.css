@@ -1,0 +1,91 @@
+* {
+box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #1b263b
+}
+
+h1, h2, header {
+font-weight: 600;
+font-family: 'VT323', monospace;
+display: flex;
+justify-content: center;
+}
+
+.letter-container {
+    display: flex;
+    height: 60vh;
+    width: 80vw;
+    justify-content: center;
+}
+
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: #778da9;
+}
+
+.plot {
+    display: flex;
+    height: 55vh;
+    width: 100vw;
+    background-color: #415a77;
+    
+}
+
+.again {
+    position: absolute;
+    bottom: 180px; 
+    left: 400px;
+    background-color: #0d1b2a;
+    color: white;
+}
+
+.animals {
+    font-size: 20px;
+    height: 50px;
+    width: 80px;
+    border-radius: 10px;
+    border: 5px;
+    position: absolute;
+    margin: 90px 60px 0;
+    background-color: #0d1b2a;
+    color: white;
+}
+.colors {
+    height: 50px;
+    width: 80px;
+    border-radius: 10px;
+    border: 5px;
+    position: absolute;
+    margin: 200px 62px 0;
+    background-color: #0d1b2a;
+    color: white;
+    font-size: 20px;
+}
+
+.shapes {
+    font-size: 20px;
+    height: 50px;
+    width: 80px;
+    border-radius: 10px;
+    border: 5px;
+    position: absolute;
+    margin: 320px 62px 0;
+    color: white;
+    background-color: #0d1b2a;
+    
+}
+
+.lives {
+    height: 50px;
+    width: 40px;
+    position: absolute;
+    margin: 400px 200px 0;
+    font-size: 25px;
+}
+
