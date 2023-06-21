@@ -7,17 +7,15 @@
         colors: ['Pink', 'Orange', 'Yellow', 'Purple', 'Burgundy', 'Beige'],
         shapes: ['Rectangle', 'Triangle', 'Sphere', 'Diamond', 'Hexagon', 'Octagon']
     };
-    const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-    'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-    't', 'u', 'v', 'w', 'x', 'y', 'z'];
      const lettersContainer = document.getElementsByClassName('letters-container');
      const topic = document.getElementsByClassName('categories');
      const playAgain = document.getElementsByClassName('again');
+     const letterGuessElement = document.getElementsByClassName('letter-guess');
+     const chosenWordElement = document.getElementsByClassName('chosen-word');
+     const livesElement = document.getElementsByClassName('lives')
 
 
     // Define state Variables
-    
-    
     let userInput = document.getElementsByClassName('user-input');
     let livesLeft = 6;
     let winCount = 0;
@@ -42,13 +40,24 @@
             processGuess(letter);
         })
     }
+    const categoryButtons = document.querySelectorAll('.shapes, .animals, .colors');
+    
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', function(evt) {
+            // Chose category from data
+            const category = evt.target.getAttribute('data-category');
+            // call init from category
+            init(category);
+        });
+    });
+
     // Functions
     
-function chooseWord(categories) {
-    const wordArray = objects[category];
-    const randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
-    return wordArray[randomWord].toLowerCase();
-}
+    function chooseWord(category) {
+        const wordArray = objects[category.toLowerCase()];
+        const randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
+        return randomWord.toLowerCase();
+    }
     // Initialize game
     function init() {
         chosenWord = chooseWord(category);
@@ -60,15 +69,18 @@ function chooseWord(categories) {
     }
     //Function update chosen word
     function updateChosenWord() {
-        const chooseWordElement = document.getElementsByClassName('chosen-word');
+        // const chooseWordElement = document.getElementsByClassName('chosen-word');
         chooseWordElement.textContent = guesses.join(' ');
     }
     //Function to update display of lives
     function updateLivesLeft() {
-        const livesLeftElement = document.getElementsByClassName('lives');
+        // const livesLeftElement = document.getElementsByClassName('lives');
         livesLeftElement.textContent = `Lives Remaining: ${livesLeft}`;
     }
-
+    
+    function updateLetterGuess(letter) {
+        letterGuessElement.textContent += letter;
+    }
     // User guess function
     function processGuess(letter) {
         if (!gameWon && livesLeft > 0) {
@@ -89,6 +101,8 @@ function chooseWord(categories) {
                 // wrong guess
                 livesLeft--;
                 updateLivesLeft();
+                // update displayed letter guesses
+                updateLetterGuess(letter);
                 if (livesLeft === 0) {
                     // out of lives
                     alert('Game Over! The word was '+ chosenWord);
@@ -98,4 +112,4 @@ function chooseWord(categories) {
     }
 
     // call init function 
-    init();
+    // init();
