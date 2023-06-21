@@ -60,12 +60,12 @@ function chooseWord(categories) {
     }
     //Function update chosen word
     function updateChosenWord() {
-        const chooseWordElement = document.getElementsByClassName('letter-guess')[0];
+        const chooseWordElement = document.getElementsByClassName('chosen-word');
         chooseWordElement.textContent = guesses.join(' ');
     }
     //Function to update display of lives
     function updateLivesLeft() {
-        const livesLeftElement = document.getElementsByClassName('lives')[0];
+        const livesLeftElement = document.getElementsByClassName('lives');
         livesLeftElement.textContent = `Lives Remaining: ${livesLeft}`;
     }
 
