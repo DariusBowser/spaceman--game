@@ -14,11 +14,13 @@ display: flex;
 justify-content: center;
 }
 
-.letter-container {
+.letters-container {
     display: flex;
     height: 60vh;
-    width: 80vw;
-    justify-content: center;
+    width: 60vw;
+    justify-content: space-evenly;
+    
+    
 }
 
 

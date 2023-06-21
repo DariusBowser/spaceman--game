@@ -1,4 +1,4 @@
-window.onload = function() {
+// window.onload = function() {}
 
     
     // Define Constants
@@ -12,63 +12,90 @@ window.onload = function() {
     't', 'u', 'v', 'w', 'x', 'y', 'z'];
      const lettersContainer = document.getElementsByClassName('letters-container');
      const topic = document.getElementsByClassName('categories');
-    const displayTopics = () => {
-        categories.innerHtml += `<h4>Please Select a Category</h4>`;
-    }
+     const playAgain = document.getElementsByClassName('again');
+
+
     // Define state Variables
     
     
     let userInput = document.getElementsByClassName('user-input');
-    let livesLeft = document.getElementsByClassName('lives');
+    let livesLeft = 6;
     let winCount = 0;
     let count = 0;
     let chosenWord = '';
+    let guesses; [];
     let misses;
     let choice;
     let word;
-    let guesses;
     let guess;
-
+    let category;
+    let gameWon; 
     
     // Cache Elements
-    let buttons = function() {
-        myLetters = document.getElementsByClassName('letter-container');
-        letters = document.createElement('ul');
-        for (let i = 0; i < letters.length; i++) {
-            alphabet.id = 'letters';
-            list = document.createElement('li');
-            alphabet.id = 'letter';
-            list.innerHtml = letters[i];
-            check();
-            buttons.appendChild(letters);
-            letters.appendChild(list);
-        }
-    }
-}
-
-    outcome = function () {
-        input = document.getElementsByClassName('user-input');
-        rightGuess = document.createElement('ul');
-        for (let i = 0; i < letters.length; i++) {
-            rightGuess.setAttribute('class', 'word');
-            guess = document.createAttribute('li');
-            guess.setAttribute('class', 'guess');
-                if (word[i] === '-') {
-                    guess.innerHtml = '-';
-                    space = 1;
-                } else {
-                    guess.innerHtml = '-';
-                }
-                guesses.push(guess);
-                }
-                rightGuess.appendChild(guess)
-        }
-
+    
     
     // Add Event Listeners
+    const letterButton = document.getElementsByClassName(`letter`);
+    for (let i = 0; i < letterButton.length; i++) {
+        letterButton[i].addEventListener('click', function(evt) {
+            const letter = evt.target.textContent.toLowerCase();
+            processGuess(letter);
+        })
+    }
+    // Functions
     
-    // Invoke the init function
-    
-    
-    
-    // Invoke the main Render function
+function chooseWord(categories) {
+    const wordArray = objects[category];
+    const randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
+    return wordArray[randomWord].toLowerCase();
+}
+    // Initialize game
+    function init() {
+        chosenWord = chooseWord(category);
+        // guesses initialize
+        guesses = Array(chosenWord.length).fill('_');
+        //update display of chosen words
+        updateChosenWord();
+        updateLivesLeft();
+    }
+    //Function update chosen word
+    function updateChosenWord() {
+        const chooseWordElement = document.getElementsByClassName('letter-guess')[0];
+        chooseWordElement.textContent = guesses.join(' ');
+    }
+    //Function to update display of lives
+    function updateLivesLeft() {
+        const livesLeftElement = document.getElementsByClassName('lives')[0];
+        livesLeftElement.textContent = `Lives Remaining: ${livesLeft}`;
+    }
+
+    // User guess function
+    function processGuess(letter) {
+        if (!gameWon && livesLeft > 0) {
+            const guessedWord = chosenWord.indexOf(letter);
+            if (guessedWord !== -1) {
+                // right guess
+                while (guessedWord !== -1) {
+                    guesses[guessedWord] = letter;
+                    guessedWord = chosenWord.indexOf(letter, guessedWord + 1);
+                }
+                updateChosenWord();
+                if (!guesses.includes('_')) {
+                    //letter guess right
+                    gameWon = true;
+                    alert('Congratulations! You won!');
+                }
+            } else {
+                // wrong guess
+                livesLeft--;
+                updateLivesLeft();
+                if (livesLeft === 0) {
+                    // out of lives
+                    alert('Game Over! The was was '+ chosenWord);
+                }
+            }
+        }
+    }
+
+    // call init function 
+    init();
