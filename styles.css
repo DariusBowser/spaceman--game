@@ -18,9 +18,7 @@ justify-content: center;
     display: flex;
     height: 60vh;
     width: 60vw;
-    justify-content: space-evenly;
-    
-    
+    justify-content: center;
 }
 
 

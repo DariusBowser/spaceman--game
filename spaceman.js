@@ -35,9 +35,9 @@
     
     
     // Add Event Listeners
-    const letterButton = document.getElementsByClassName(`letter`);
-    for (let i = 0; i < letterButton.length; i++) {
-        letterButton[i].addEventListener('click', function(evt) {
+    const letterButtons = document.getElementsByClassName(`letter`);
+    for (let i = 0; i < letterButtons.length; i++) {
+        letterButtons[i].addEventListener('click', function(evt) {
             const letter = evt.target.textContent.toLowerCase();
             processGuess(letter);
         })
@@ -91,7 +91,7 @@ function chooseWord(categories) {
                 updateLivesLeft();
                 if (livesLeft === 0) {
                     // out of lives
-                    alert('Game Over! The was was '+ chosenWord);
+                    alert('Game Over! The word was '+ chosenWord);
                 }
             }
         }
