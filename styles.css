@@ -4,7 +4,31 @@ box-sizing: border-box;
 
 body {
     margin: 0;
-    background-color: #1b263b
+    background-color: grey
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+#letterContainer {
+    width: 20vw;
+}
+#categories {
+    height: 10vh;
+    justify-content: space-between;
+}
+#letterInput {
+    display: flex;
+    justify-content: space-between;
+    width: 20vw;
 }
 
 h1, h2, header {
@@ -14,35 +38,13 @@ display: flex;
 justify-content: center;
 }
 
-/* .letters-container {
-    width: 45vw;
-    margin: 30px 30px 0 140px;
-    height: 40px;
-} */
-
-.letter {
-    justify-content: center;
-    align-items: center;
-    height: 30px;
-    right: 90px;
-    margin: 0px 30px 0px 5px;
-    width: 25px
-}
-
-.container {
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-    background-color: #778da9;
-}
-
-.plot {
+/* .plot {
     display: flex;
     height: 55vh;
     width: 100vw;
     background-color: #415a77;
-    
 }
+
 
 .again {
     position: absolute;
@@ -52,47 +54,29 @@ justify-content: center;
     color: white;
 }
 
-.animals {
-    font-size: 20px;
-    height: 50px;
-    width: 80px;
-    border-radius: 10px;
-    border: 5px;
+ .animals {
     position: absolute;
     margin: 90px 30px 0;
     background-color: #0d1b2a;
-    color: white;
+    color: white; 
 }
+
 .colors {
-    height: 50px;
-    width: 80px;
-    border-radius: 10px;
-    border: 5px;
     position: absolute;
-    margin: 200px 32px 0;
+    margin: 150px 30px 0;
     background-color: #0d1b2a;
     color: white;
-    font-size: 20px;
 }
 
 .shapes {
-    font-size: 20px;
-    height: 50px;
-    width: 80px;
-    border-radius: 10px;
-    border: 5px;
     position: absolute;
-    margin: 320px 32px 0;
+    margin: 120px 30px 0;
     color: white;
     background-color: #0d1b2a;
-    
+     
 }
-
 .lives {
-    height: 50px;
-    width: 40px;
     position: absolute;
-    margin: 400px 200px 0;
-    font-size: 25px;
-}
-
+    margin: 400px 30px 0 0;
+    font-size: 30px;
+} */

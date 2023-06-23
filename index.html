@@ -13,53 +13,63 @@
     <header>SPACEMAN</header>
     <h1>GUESS CORRECTLY OR ENTER SPACE</h1>
     <h2>Choose Your Category</h2>
-   <div class="container">
+    <div class="container">
+
+    <div id="categories" class="column">
+        <button class="category" data-category="shapes">Shapes</button>
+        <button class="category" data-category="animals">Animals</button>
+        <button class="category" data-category="colors">Colors</button>
+    </div>
+
+        <div class="column">
+            <div id="letterContainer">
+                <button class="letter">A</button>
+                <button class="letter">B</button>
+                <button class="letter">C</button>
+                <button class="letter">D</button>
+                <button class="letter">E</button>
+                <button class="letter">F</button>
+                <button class="letter">G</button>
+                <button class="letter">H</button>
+                <button class="letter">I</button>
+                <button class="letter">J</button>
+                <button class="letter">K</button>
+                <button class="letter">L</button>
+                <button class="letter">M</button>
+                <button class="letter">N</button>
+                <button class="letter">O</button>
+                <button class="letter">P</button>
+                <button class="letter">Q</button>
+                <button class="letter">R</button>
+                <button class="letter">S</button>
+                <button class="letter">T</button>
+                <button class="letter">U</button>
+                <button class="letter">V</button>
+                <button class="letter">W</button>
+                <button class="letter">X</button>
+                <button class="letter">Y</button>
+                <button class="letter">Z</button>
+            </div>
+            </div>
+        <div class="column">
+            <div id="letterInput"></div>
+            
+            </div>
+    </div>
     <div class="plot">
 
-        <div class="letters-container">
-            <button class="letter">A</button>
-            <button class="letter">B</button>
-            <button class="letter">C</button>
-            <button class="letter">D</button>
-            <button class="letter">E</button>
-            <button class="letter">F</button>
-            <button class="letter">G</button>
-            <button class="letter">H</button>
-            <button class="letter">I</button>
-            <button class="letter">J</button>
-            <button class="letter">K</button>
-            <button class="letter">L</button>
-            <button class="letter">M</button>
-            <button class="letter">N</button>
-            <button class="letter">O</button>
-            <button class="letter">P</button>
-            <button class="letter">Q</button>
-            <button class="letter">R</button>
-            <button class="letter">S</button>
-            <button class="letter">T</button>
-            <button class="letter">U</button>
-            <button class="letter">V</button>
-            <button class="letter">W</button>
-            <button class="letter">X</button>
-            <button class="letter">Y</button>
-            <button class="letter">Z</button>
-        </div>
+        </div> 
         
         <div class="game-state">
             <div class="chosen-word"></div>
-            <div class="lives">Lives Remaining:</div>
         </div>
         <div class="letter-guess"></div>
         <div class="categories"></div>
         <div class="user-input"></div>
         
+        <div class="lives">Lives Remaining:</div>
 
-        
-        
-        <button class="shapes" data-category="shapes">Shapes</button>
         <button class="again">Play Again</button>
-        <button class="animals" data-category="animals">Animals</button>
-        <button class="colors" data-category="colors">Colors</button>
     </div>
 </div>
 </body>
