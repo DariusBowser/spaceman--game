@@ -14,13 +14,14 @@
     <h1>GUESS CORRECTLY OR ENTER SPACE</h1>
     <h2>Choose Your Category</h2>
     <div class="container">
-
-    <div id="categories" class="column">
-        <button class="category" data-category="shapes">Shapes</button>
-        <button class="category" data-category="animals">Animals</button>
-        <button class="category" data-category="colors">Colors</button>
-    </div>
-
+        
+        <div id="categories" class="column">
+            <button class="category" data-category="shapes">Shapes</button>
+            <button class="category" data-category="animals">Animals</button>
+            <button class="category" data-category="colors">Colors</button>
+            <button id="again">Play Again</button>
+        </div>
+        
         <div class="column">
             <div id="letterContainer">
                 <button class="letter">A</button>
@@ -55,7 +56,7 @@
             <div id="letterInput"></div>
             
             </div>
-    </div>
+        </div>
     <div class="plot">
 
         </div> 
@@ -69,8 +70,11 @@
         
         <div class="lives">Lives Remaining:</div>
 
-        <button class="again">Play Again</button>
     </div>
+    <div id="popup" class="popup">
+        <div id="popupMessage" ></div>
+        <button id="popupClose">Close</button>
+      </div>
 </div>
 </body>
 </html>
