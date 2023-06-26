@@ -11,23 +11,30 @@ const categories = {
   colors: ["Pink", "Orange", "Yellow", "Purple", "Burgundy", "Beige"],
   shapes: ["Rectangle", "Triangle", "Sphere", "Diamond", "Hexagon", "Octagon"],
 };
+const images = [
+  "Spaceman6.jpeg",
+  "spaceman5.jpeg",
+  "spaceman4.webp",
+  "Spaceman3.webp",
+  "Spaceman2.jpeg",
+  "Spaceman1.jpeg",
+];
+
 // HTML components
+const spacemanPhoto = document.getElementById("spacemanImage");
 const categoriesDiv = document.getElementById("categories");
 const letterInputDiv = document.getElementById("letterInput");
 const letterButtons = document.querySelectorAll(".letter");
 const categoryButtons = document.querySelectorAll(".category");
-
 const letterGuessElement = document.getElementsByClassName("letter-guess");
-
 const playAgain = document.querySelector("#again");
 const chosenWordElement = document.getElementsByClassName("chosen-word");
-const livesElement = document.getElementsByClassName("lives");
+const livesElement = document.querySelector(".lives");
+const popup = document.getElementById("popup");
+const popupMessage = document.getElementById("popupMessage");
+const popupClose = document.getElementById("popupClose");
 
-const popup = document.getElementById('popup');
-const popupMessage = document.getElementById('popupMessage');
-const popupClose = document.getElementById('popupClose');
-
-//variables
+// Variables
 let userInput = document.getElementsByClassName("user-input");
 let livesLeft = 4;
 let chosenWord;
@@ -35,8 +42,7 @@ let guesses = [];
 let category;
 let matches = 0;
 
-console.log(categoriesDiv);
-
+// Functions
 function chooseWord() {
   const wordArray = categories[category];
   const randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
@@ -59,17 +65,6 @@ function checkGameStatus() {
   }
 }
 
-// function processGuess(letter) {
-//   if (chosenWord.includes(letter)) {
-//     for (let i = 0; i < chosenWord.length; i++) {
-//       if (chosenWord[i] === letter) {
-//         document.getElementById(`letterInput${i}`).textContent = letter;
-//         matches++;
-//       }
-//     }
-//   } else livesLeft--;
-//   checkGameStatus();
-// }
 function processGuess(letter) {
   if (chosenWord.includes(letter)) {
     for (let i = 0; i < chosenWord.length; i++) {
@@ -80,28 +75,22 @@ function processGuess(letter) {
     }
   } else {
     livesLeft--;
-    updateSpaceman()
+    updateSpaceman();
   }
   checkGameStatus();
 }
 
-// function init() {
-//   chosenWord = chooseWord();
-//   console.log(chosenWord);
-//   createBlankLetterInput();
-// }
 function init() {
   chosenWord = chooseWord();
   console.log(chosenWord);
   createBlankLetterInput();
   updateSpaceman();
 }
-// Add Event Listeners
+
+// Event listeners
 categoryButtons.forEach((categoryButton) => {
   categoryButton.addEventListener("click", function (evt) {
-    // Chose category from data
     category = evt.target.getAttribute("data-category");
-    // call init from category
     evt.target.disabled = true;
     init();
   });
@@ -115,11 +104,11 @@ letterButtons.forEach((letterButton) => {
   });
 });
 
-playAgain.addEventListener('click', function(evt){
-  console.log('click')
+playAgain.addEventListener("click", function (evt) {
+  console.log("click");
   resetGame();
-})
-popupClose.addEventListener('click', closePopup);
+});
+popupClose.addEventListener("click", closePopup);
 
 // Functions
 
@@ -127,11 +116,10 @@ popupClose.addEventListener('click', closePopup);
 function updateChosenWord() {
   chosenWordElement.textContent = guesses.join(" ");
 }
-//Function to update display of lives
-// function updateLivesLeft() {
-//   livesElement.textContent = `Lives Remaining: ${livesLeft}`;
-// }
+
 function updateSpaceman() {
+  const spacemanPics = images[images.length - livesLeft];
+  spacemanPhoto.src = spacemanPics;
   livesElement.textContent = `Lives Remaining: ${livesLeft}`;
 }
 
@@ -139,54 +127,23 @@ function updateLetterGuess(letter) {
   letterGuessElement.textContent += letter;
 }
 
-// function resetGame() {
-//   matches = 0;
-//   livesLeft = 4;
-//   chosenWord = "";
-//   guesses = [];
-//   category = "";
-  
-//   // Re-enable category buttons
-//   categoryButtons.forEach((categoryButton) => {
-//     categoryButton.disabled = false;
-//   });
-  
-//   // Enable all letter buttons
-//   letterButtons.forEach((letterButton) => {
-//     letterButton.disabled = false;
-//   });
-  
-//   // Clear letter input and guessed letters
-//   letterInputDiv.innerHTML = "";
-//   letterGuessElement.textContent = "";
-// }
-
-// function showPopup(message) {
-//   popupMessage.textContent = message;
-//   popup.style.display = 'block';
-// }
-
-// function closePopup() {
-//   popup.style.display = 'none';
-// }
-
 function resetGame() {
   matches = 0;
   livesLeft = 4;
   chosenWord = "";
   guesses = [];
   category = "";
-  
+
   // Re-enable category buttons
   categoryButtons.forEach((categoryButton) => {
     categoryButton.disabled = false;
   });
-  
-  // Enable all letter buttons
+
+  // Enable letter buttons
   letterButtons.forEach((letterButton) => {
     letterButton.disabled = false;
   });
-  
+
   // Clear letter input and guessed letters
   letterInputDiv.innerHTML = "";
   letterGuessElement.textContent = "";
@@ -196,9 +153,9 @@ function resetGame() {
 
 function showPopup(message) {
   popupMessage.textContent = message;
-  popup.style.display = 'block';
+  popup.style.display = "block";
 }
 
 function closePopup() {
-  popup.style.display = 'none';
+  popup.style.display = "none";
 }

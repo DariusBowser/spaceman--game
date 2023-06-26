@@ -3,6 +3,13 @@ box-sizing: border-box;
 }
 
 body {
+    background-image: url('https://getwallpapers.com/wallpaper/full/0/f/f/242259.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+body {
     margin: 0;
     background-color: grey
 }
@@ -16,19 +23,27 @@ body {
 .column {
     display: flex;
     flex-direction: column;
+    width: 800px
 }
 
 #letterContainer {
-    width: 20vw;
+    width: 30vw;
+
 }
 #categories {
-    height: 10vh;
+    height: 200px;
     justify-content: space-between;
+    width: 200px;
+    font-size: 90px;
 }
 #letterInput {
     display: flex;
     justify-content: space-between;
     width: 20vw;
+}
+.letter {
+    font-size: 30px;
+    
 }
 
 h1, h2, header {
@@ -36,66 +51,58 @@ font-weight: 600;
 font-family: 'VT323', monospace;
 display: flex;
 justify-content: center;
+color: white
 }
+#letterInput {
+    color: white;
+    font-size: 50px;
+    max-width: 90px;
+    display: flex;
+    justify-content: space-between;
+}
+#again {
+position: fixed;
+top: 600px;
+width: 90px;
+height: 30px;
+font-size: 15px;
+left: 80px;
 
-.again {
-height: 20px;
-
+}
+.lives {
+    position: fixed;
+    top: 500px;
+    color:white;
+    font-size: 40px;
+    left: 80px;
 }
 .popup {
     position: fixed;
-    top: 50%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
-    border: 1px solid #ccc;
     padding: 20px;
     text-align: center;
+    font-size: 50px;
   }
   
-  .popup-close {
+  #popupClose {
     margin-top: 10px;
+    font-size: 20px;
+  }
+  
+  #popupMessage {
+    color: white;
   }
 
-/* .plot {
+  #spacemanContainer {
     display: flex;
-    height: 55vh;
-    width: 100vw;
-    background-color: #415a77;
-}
-
-
-.again {
-    position: absolute;
-    bottom: 180px; 
-    left: 400px;
-    background-color: #0d1b2a;
-    color: white;
-}
-
- .animals {
-    position: absolute;
-    margin: 90px 30px 0;
-    background-color: #0d1b2a;
-    color: white; 
-}
-
-.colors {
-    position: absolute;
-    margin: 150px 30px 0;
-    background-color: #0d1b2a;
-    color: white;
-}
-
-.shapes {
-    position: absolute;
-    margin: 120px 30px 0;
-    color: white;
-    background-color: #0d1b2a;
-     
-}
-.lives {
-    position: absolute;
-    margin: 400px 30px 0 0;
-    font-size: 30px;
-} */
+    justify-content: center;
+    align-items: center;
+    height: 300px; 
+  }
+  
+  #spacemanImage {
+    width: 200px; 
+    height: 200px; 
+  }
