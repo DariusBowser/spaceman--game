@@ -12,16 +12,16 @@ const categories = {
   shapes: ["Rectangle", "Triangle", "Sphere", "Diamond", "Hexagon", "Octagon"],
 };
 const images = [
-  "Spaceman6.jpeg",
-  "spaceman5.jpeg",
-  "spaceman4.webp",
-  "Spaceman3.webp",
-  "Spaceman2.jpeg",
-  "Spaceman1.jpeg",
+  "Assets/Spaceman6.jpeg",
+  "Assets/spaceman5.jpeg",
+  "Assets/spaceman4.webp",
+  "Assets/Spaceman3.webp",
+  "Assets/Spaceman2.jpeg",
+  "Assets/Spaceman1.jpeg"
 ];
 
 // HTML components
-const spacemanPhoto = document.getElementById("spacemanImage");
+const spacemanPhoto = document.getElementById('spacemanImage');
 const categoriesDiv = document.getElementById("categories");
 const letterInputDiv = document.getElementById("letterInput");
 const letterButtons = document.querySelectorAll(".letter");
@@ -65,6 +65,7 @@ function checkGameStatus() {
   }
 }
 
+
 function processGuess(letter) {
   if (chosenWord.includes(letter)) {
     for (let i = 0; i < chosenWord.length; i++) {
@@ -80,13 +81,13 @@ function processGuess(letter) {
   checkGameStatus();
 }
 
+
 function init() {
   chosenWord = chooseWord();
   console.log(chosenWord);
   createBlankLetterInput();
   updateSpaceman();
 }
-
 // Event listeners
 categoryButtons.forEach((categoryButton) => {
   categoryButton.addEventListener("click", function (evt) {
@@ -118,7 +119,7 @@ function updateChosenWord() {
 }
 
 function updateSpaceman() {
-  const spacemanPics = images[images.length - livesLeft];
+  const spacemanPics = images[images.length - livesLeft]
   spacemanPhoto.src = spacemanPics;
   livesElement.textContent = `Lives Remaining: ${livesLeft}`;
 }
@@ -132,7 +133,7 @@ function resetGame() {
   livesLeft = 4;
   chosenWord = "";
   guesses = [];
-  category = '';
+  category = "";
 
   // Re-enable category buttons
   categoryButtons.forEach((categoryButton) => {
