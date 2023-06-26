@@ -15,6 +15,6 @@ Lives remaining in sync
 
 ### Future Enhancements
 Spaecman will appear to be floating in space when lives run out. 
-Sound effects on click and win/lose 
-Add moving background
+ Sound effects on click and win/lose.
+ Add moving background.
  # Link: https://dariusbowser.github.io/spaceman--game/
