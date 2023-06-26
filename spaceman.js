@@ -132,7 +132,7 @@ function resetGame() {
   livesLeft = 4;
   chosenWord = "";
   guesses = [];
-  category = "";
+  category = '';
 
   // Re-enable category buttons
   categoryButtons.forEach((categoryButton) => {
