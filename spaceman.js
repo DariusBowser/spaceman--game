@@ -12,12 +12,12 @@ const categories = {
   shapes: ["Rectangle", "Triangle", "Sphere", "Diamond", "Hexagon", "Octagon"],
 };
 const images = [
-  "Assets/Spaceman6.jpeg",
-  "Assets/spaceman5.jpeg",
-  "Assets/spaceman4.webp",
-  "Assets/Spaceman3.webp",
-  "Assets/Spaceman2.jpeg",
-  "Assets/Spaceman1.jpeg"
+  "./Assets/Spaceman6.jpeg",
+  "./Assets/spaceman5.jpeg",
+  "./Assets/spaceman4.webp",
+  "./Assets/Spaceman3.webp",
+  "./Assets/Spaceman2.jpeg",
+  "./Assets/Spaceman1.jpeg"
 ];
 
 // HTML components
