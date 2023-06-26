@@ -8,10 +8,10 @@ The objective of Spaceman is to guess the secret word before the spaceman fully 
 
 
 ## Minimum Viable Product
-Play again button
-All categories working
-Lives remaining in sync
-
+Play again button. 
+ All categories working.
+ Lives remaining in sync.
+ 
 
 ### Future Enhancements
 Spaecman will appear to be floating in space when lives run out. 
